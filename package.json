@@ -1,16 +1,28 @@
 {
-  "name": "cordova-plugin-crypt-file",
-  "version": "1.3.3",
-  "description": "This plugin to encrypt/decrypt the source files.",
+  "name": "cordova-plugin-its-encryptsrc",
+  "version": "1.0.0",
+  "description": "Cordova plugin for encrypting source code on Android and iOS",
+  "scripts": {},
   "repository": {
     "type": "git",
-    "url": "https://github.com/tkyaji/cordova-plugin-crypt-file.git"
+    "url": "git+https://github.com/QuentinFung/cordova-plugin-its-encryptsrc.git"
   },
   "keywords": [
     "ecosystem:cordova",
     "cordova-android",
-    "cordova-ios"
+    "cordova-ios",
+    "cordova",
+    "encrypt",
+    "source",
+    "protect",
+    "android",
+    "ios",
+    "plugin"
   ],
-  "author": "tkyaji",
-  "license": "Apache version 2.0"
+  "author": "Quentin Fung <quentin.fung@hku.hk>",
+  "license": "Apache 2.0",
+  "bugs": {
+    "url": "https://github.com/QuentinFung/cordova-plugin-its-encryptsrc/issues"
+  },
+  "homepage": "https://github.com/QuentinFung/cordova-plugin-its-encryptsrc#readme"
 }

@@ -16,14 +16,14 @@ module.exports = function(context) {
     var key = crypto.randomBytes(24).toString('base64');
     var iv = crypto.randomBytes(12).toString('base64');
 
-    console.log('key=' + key + ', iv=' + iv)
+    console.log('Key=' + key + ', IV=' + iv)
 
     var targetFiles = loadCryptFileTargets();
 
     context.opts.platforms.filter(function(platform) {
         var pluginInfo = context.opts.plugin.pluginInfo;
         return pluginInfo.getPlatformsArray().indexOf(platform) > -1;
-        
+
     }).forEach(function(platform) {
         var platformPath = path.join(projectRoot, 'platforms', platform);
         var platformApi = platforms.getPlatformApi(platform, platformPath);
@@ -35,7 +35,7 @@ module.exports = function(context) {
         }).forEach(function(file) {
             var content = fs.readFileSync(file, 'utf-8');
             fs.writeFileSync(file, encryptData(content, key, iv), 'utf-8');
-            console.log('encrypt: ' + file);
+            console.log('encrypting > ' + file);
         });
 
         if (platform == 'ios') {
@@ -153,7 +153,7 @@ module.exports = function(context) {
     }
 
     function replaceCryptKey_android(pluginDir, key, iv) {
-        var sourceFile = path.join(pluginDir, 'com/tkyaji/cordova/DecryptResource.java');
+        var sourceFile = path.join(pluginDir, 'hk/hku/its/encryptsrc/DecryptResource.java');
         var content = fs.readFileSync(sourceFile, 'utf-8');
 
         var includeArrStr = targetFiles.include.map(function(pattern) { return '"' + pattern.replace('\\', '\\\\') + '"'; }).join(', ');
