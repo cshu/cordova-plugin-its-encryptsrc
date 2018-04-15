@@ -9,7 +9,7 @@
   <keywords>cordova,encrypt,source,protect,android,ios,plugin</keywords>
 
   <platform name="android">
-    <config-file target="config.xml" parent="/*">
+    <config-file target="res/xml/config.xml" parent="/*">
       <feature name="DecryptResource">
         <param name="android-package" value="hk.hku.its.encryptsrc.DecryptResource" />
         <param name="onload" value="true" />
